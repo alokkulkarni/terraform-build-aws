@@ -1,0 +1,6 @@
+project_name = "myapp"
+environment  = "dev"
+db_password  = "your-db-password"
+api_key      = "your-api-key"
+kms_key_id   = "your-kms-key-arn"
+az_count     = 1 

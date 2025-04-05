@@ -1,0 +1,12 @@
+apiVersion: score.dev/v1b1
+metadata:
+  name: paymentsapi
+spec:
+  containers:
+    app:
+      image: paymentsapi:latest
+      variables: {}
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi

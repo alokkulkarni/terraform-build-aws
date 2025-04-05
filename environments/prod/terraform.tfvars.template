@@ -1,0 +1,56 @@
+project_name = "myapp"
+environment  = "prod"
+db_password  = "your-db-password"
+api_key      = "your-api-key"
+kms_key_id   = "your-kms-key-arn"
+
+# Default components (always included)
+enabled_components = [
+  "vpc",
+  "alb",
+  "route53",
+  "certificate",
+  "secrets-store"
+]
+
+# VPC Configuration
+vpc_cidr = "10.2.0.0/16"
+availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+
+# EKS Configuration (if selected)
+eks_version = "1.28"
+eks_node_type = "t3.large"
+eks_min_nodes = 3
+eks_max_nodes = 6
+eks_spot_instances = false
+
+# RDS Configuration (if selected)
+rds_instance_class = "db.t3.large"
+rds_multi_az = true
+rds_backup_retention = 35
+rds_performance_insights = true
+rds_performance_insights_retention = 7
+
+# ALB Configuration
+alb_internal = false
+alb_ssl_policy = "ELBSecurityPolicy-TLS-1-2-2017-01"
+alb_access_logs = true
+
+# Certificate Configuration
+certificate_domain = "*.example.com"
+certificate_validation_method = "DNS"
+
+# Security Configuration
+enable_cloudtrail = true
+enable_guardduty = true
+enable_security_hub = true
+enable_config = true
+
+# Backup Configuration
+backup_retention_days = 35
+backup_vault_name = "prod-backup-vault"
+
+# Monitoring Configuration
+enable_cloudwatch_alarms = true
+enable_cloudwatch_logs = true
+enable_xray = true 
